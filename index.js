@@ -9,6 +9,14 @@ const app = express();
 // Serve static files from the "public" folder
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
+
+app.get('/health-check', (req, res) => {
+  res.send('all good bro')
+})
+
 // Create an HTTP server
 const server = http.createServer(app);
 
